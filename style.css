@@ -1,0 +1,239 @@
+/* =============================================
+   WeatherScope – Custom Styles
+   Source: BMKG (bmkg.go.id)
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* { box-sizing: border-box; }
+
+/* ── Scrollbar ──────────────────────────────── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── BMKG Badge ─────────────────────────────── */
+.bmkg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #22d3ee;
+  background: rgba(34,211,238,0.1);
+  border: 1px solid rgba(34,211,238,0.3);
+  border-radius: 999px;
+  padding: 2px 7px;
+  line-height: 1.4;
+}
+
+/* ── City Chip ──────────────────────────────── */
+.city-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.city-chip:hover {
+  background: rgba(59,130,246,0.25);
+  border-color: rgba(59,130,246,0.5);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59,130,246,0.2);
+}
+
+/* ── Glass Card ─────────────────────────────── */
+.card-glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+/* ── Stat Card ──────────────────────────────── */
+.stat-card {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+.stat-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+.stat-icon  { font-size: 1.5rem; }
+.stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); font-weight: 600; }
+.stat-value { font-size: 1.05rem; font-weight: 700; color: white; }
+
+/* ── Hourly Item ────────────────────────────── */
+.hourly-item {
+  flex: 1;
+  min-width: 86px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, border-color 0.2s;
+  cursor: default;
+}
+.hourly-item:hover { background: rgba(59,130,246,0.2); border-color: rgba(59,130,246,0.4); }
+.hourly-item.active { background: rgba(59,130,246,0.3); border-color: rgba(59,130,246,0.6); box-shadow: 0 4px 20px rgba(59,130,246,0.3); }
+.hourly-time { font-size: 0.85rem; color: rgba(255,255,255,0.65); font-weight: 700; letter-spacing: 0.03em; }
+.hourly-icon { font-size: 2rem; line-height: 1; }
+.hourly-temp { font-size: 1.15rem; font-weight: 700; color: white; }
+.hourly-hum  { font-size: 0.75rem; color: #60a5fa; font-weight: 600; }
+
+/* ── Daily Item ─────────────────────────────── */
+.daily-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+.daily-item:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+.daily-day  { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); }
+.daily-icon { font-size: 2.8rem; line-height: 1; }
+.daily-desc { font-size: 0.85rem; color: rgba(255,255,255,0.55); text-align: center; line-height: 1.4; }
+.daily-temps { display: flex; gap: 12px; align-items: center; }
+.daily-high { font-size: 1.25rem; font-weight: 700; color: #fbbf24; }
+.daily-low  { font-size: 1.1rem; color: #60a5fa; }
+.daily-stats { display: flex; flex-direction: column; gap: 6px; width: 100%; margin-top: 4px; }
+.daily-stat  { display: flex; justify-content: space-between; font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+.daily-stat span:last-child { color: rgba(255,255,255,0.9); font-weight: 600; }
+
+/* ── Humidity Chart ─────────────────────────── */
+.hum-bar-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.hum-bar-fill { width: 100%; border-radius: 4px 4px 0 0; background: linear-gradient(to top, #3b82f6, #22d3ee); transition: height 1s ease; }
+.hum-bar-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-align: center; }
+
+/* ── Detail Table ───────────────────────────── */
+#detail-tbody tr { transition: background 0.15s; }
+#detail-tbody tr:hover { background: rgba(255,255,255,0.04); }
+#detail-tbody td { padding: 11px 0; color: rgba(255,255,255,0.8); font-size: 0.875rem; line-height: 1.4; }
+#detail-tbody td:not(:last-child) { padding-right: 16px; }
+.td-time { color: rgba(255,255,255,0.55) !important; font-size: 0.8rem !important; white-space: nowrap; }
+.td-temp  { font-weight: 700; color: white !important; font-size: 0.9rem !important; }
+.td-right { text-align: right; }
+
+/* ── Autocomplete ───────────────────────────── */
+.ac-item {
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.ac-item:last-child { border-bottom: none; }
+.ac-item:hover { background: rgba(59,130,246,0.2); }
+.ac-city { font-size: 0.875rem; font-weight: 600; color: white; }
+.ac-province { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+.ac-dot { width: 6px; height: 6px; border-radius: 50%; background: #38bdf8; shrink-0: true; }
+
+/* ── Weather BG ─────────────────────────────── */
+.rain-drop {
+  position: absolute;
+  width: 1.5px;
+  border-radius: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(147,210,255,0.55));
+  animation: rain var(--dur) linear infinite;
+  animation-delay: var(--delay);
+}
+.snow-flake {
+  position: absolute;
+  color: white;
+  font-size: var(--size);
+  animation: snow var(--dur) linear infinite;
+  animation-delay: var(--delay);
+  opacity: 0.7;
+}
+.lightning-flash {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.025);
+  animation: lightning 4s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+.cloud-drift {
+  position: absolute;
+  font-size: var(--size);
+  opacity: var(--opacity, 0.15);
+  animation: fog 10s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+/* ── Light Mode overrides ───────────────────── */
+html:not(.dark) body {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 40%, #e0f2fe 100%);
+  color: #0f172a;
+}
+html:not(.dark) .card-glass,
+html:not(.dark) .stat-card,
+html:not(.dark) .hourly-item,
+html:not(.dark) .daily-item { background: rgba(255,255,255,0.65); border-color: rgba(0,0,0,0.1); }
+html:not(.dark) .stat-label, html:not(.dark) .daily-day, html:not(.dark) .hourly-time  { color: rgba(0,0,0,0.45) !important; }
+html:not(.dark) .stat-value, html:not(.dark) .hourly-temp { color: #0f172a !important; }
+html:not(.dark) h3 { color: rgba(0,0,0,0.6) !important; }
+html:not(.dark) header { background: rgba(255,255,255,0.55) !important; }
+html:not(.dark) footer { border-color: rgba(0,0,0,0.08); color: rgba(0,0,0,0.3); }
+html:not(.dark) #search-input { background: rgba(255,255,255,0.7); border-color: rgba(0,0,0,0.15); color: #0f172a; }
+html:not(.dark) #search-input::placeholder { color: rgba(0,0,0,0.3); }
+html:not(.dark) #dark-toggle { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.12); }
+html:not(.dark) #dark-toggle:hover { background: rgba(0,0,0,0.12); }
+html:not(.dark) #dark-toggle svg { color: #0f172a !important; }
+html:not(.dark) .city-chip { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.12); color: #0f172a; }
+html:not(.dark) #detail-tbody td { color: rgba(0,0,0,0.7); }
+html:not(.dark) .td-time { color: rgba(0,0,0,0.4) !important; }
+html:not(.dark) .td-temp { color: #0f172a !important; }
+html:not(.dark) .ac-city { color: #0f172a; }
+html:not(.dark) #autocomplete { background: rgba(255,255,255,0.98); border-color: rgba(0,0,0,0.1); }
+
+/* Additional text color fixes for light mode */
+html:not(.dark) .card-glass .text-white { color: #0f172a !important; }
+html:not(.dark) .card-glass .text-white\/60 { color: rgba(0,0,0,0.6) !important; }
+html:not(.dark) .card-glass .text-white\/50 { color: rgba(0,0,0,0.5) !important; }
+html:not(.dark) .card-glass .text-white\/40 { color: rgba(0,0,0,0.4) !important; }
+html:not(.dark) .card-glass .text-white\/30 { color: rgba(0,0,0,0.3) !important; }
+html:not(.dark) .daily-desc { color: rgba(0,0,0,0.55) !important; }
+html:not(.dark) .daily-stat { color: rgba(0,0,0,0.55) !important; }
+html:not(.dark) .daily-stat span:last-child { color: #0f172a !important; }
+html:not(.dark) #welcome-state p.text-white\/50 { color: rgba(0,0,0,0.6) !important; }
+html:not(.dark) #welcome-state label.text-white\/60 { color: rgba(0,0,0,0.7) !important; }
+html:not(.dark) #welcome-state label .text-white\/30 { color: rgba(0,0,0,0.4) !important; }
+html:not(.dark) select { background-color: rgba(255,255,255,0.8) !important; border-color: rgba(0,0,0,0.15) !important; color: #0f172a !important; }
+html:not(.dark) select option { color: #0f172a !important; }
+html:not(.dark) #wind-compass { border-color: rgba(0,0,0,0.15) !important; }
+html:not(.dark) circle[stroke="rgba(255,255,255,0.08)"] { stroke: rgba(0,0,0,0.08) !important; }
+
+/* Breadcrumb overrides */
+html:not(.dark) button[onclick="showWelcome()"] { background-color: rgba(255,255,255,0.7) !important; border-color: rgba(0,0,0,0.15) !important; color: #0f172a !important; }
+html:not(.dark) button[onclick="showWelcome()"]:hover { background-color: rgba(255,255,255,0.95) !important; }
+html:not(.dark) #breadcrumb-city, html:not(.dark) button[onclick="showWelcome()"] + span { color: rgba(0,0,0,0.5) !important; }
+
+/* ── Transitions ────────────────────────────── */
+body, header, .card-glass, .stat-card, .hourly-item, .daily-item {
+  transition: background-color 0.4s, border-color 0.4s, color 0.4s;
+}
